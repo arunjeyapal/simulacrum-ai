@@ -1,0 +1,12 @@
+# Core Logic
+pydantic>=2.0.0        # Strict typing for Agent schemas (Essential for reliability)
+numpy>=1.24.0          # For calculating consensus vectors or economic shifts
+
+# AI Interface
+litellm>=1.0.0         # The best lightweight wrapper. Supports OpenAI, Claude, Ollama (local)
+                       # This allows your users to use Local LLMs easily.
+
+# Utilities
+python-dotenv>=1.0.0   # Managing API keys
+rich>=13.0.0           # Makes your terminal output look like a Sci-Fi HUD
+tenacity>=8.0.0        # Retry logic for when LLM APIs fail
