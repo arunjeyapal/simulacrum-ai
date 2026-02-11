@@ -8,7 +8,7 @@
 
 Simulacrum is an open-source framework for creating AI agents with psychological consistency, memory, and emergent behavior. Move beyond static user personas to dynamic behavioral simulations.
 
-📰 **Featured in LinkedIn Newsletter**: ["The Simulation Layer"](https://linkedin.com/newsletters/[your-newsletter-id])
+📰 **Featured in LinkedIn Newsletter**: ["The Simulation Layer"](https://www.linkedin.com/newsletters/the-simulation-layer-7425530387369472000)
 
 ---
 
@@ -329,13 +329,13 @@ If you find this project useful, please consider starring it on GitHub!
 
 This project accompanies a 5-part LinkedIn newsletter series:
 
-1. **[The Rise of Synthetic Citizens](https://linkedin.com/pulse/[article-1-url])** ← You are here
-2. **The Elegance of the Swarm** - Distributed protocols (Coming Feb 23)
-3. **The Agent-to-Agent Economy** - Autonomous marketplaces (Coming Mar 7)
-4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 21)
-5. **Governance as Architecture** - AI safety at scale (Coming Apr 4)
+1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** ← You are here
+2. **The Elegance of the Swarm** - Distributed protocols (Coming Feb 17)
+3. **The Agent-to-Agent Economy** - Autonomous marketplaces (Coming Feb 24)
+4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 03)
+5. **Governance as Architecture** - AI safety at scale (Coming Mar 10)
 
-Subscribe to the newsletter: [[LinkedIn Newsletter Link]](https://linkedin.com/newsletters/[your-newsletter-id])
+Subscribe to the newsletter: [[LinkedIn Newsletter Link]](https://www.linkedin.com/newsletters/the-simulation-layer-7425530387369472000)
 
 ---
 

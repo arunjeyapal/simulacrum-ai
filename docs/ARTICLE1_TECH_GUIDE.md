@@ -237,5 +237,5 @@ For production use, consider:
 
 ---
 
-*Last Updated: 2025-02-08*  
+*Last Updated: 2026-02-11*  
 *Simulacrum Project v0.1*
