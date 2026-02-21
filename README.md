@@ -329,8 +329,8 @@ If you find this project useful, please consider starring it on GitHub!
 
 This project accompanies a 5-part LinkedIn newsletter series:
 
-1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** ← You are here
-2. **The Elegance of the Swarm** - Distributed protocols (Coming Feb 17)
+1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** - (Released Feb 10)
+2. **[The Elegance of the Swarm](https://www.linkedin.com/pulse/elegance-swarm-distributed-agentic-protocols-arun-jayapal-phd-in-cs-c50gc)** - Distributed protocols ← You are here
 3. **The Agent-to-Agent Economy** - Autonomous marketplaces (Coming Feb 24)
 4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 03)
 5. **Governance as Architecture** - AI safety at scale (Coming Mar 10)

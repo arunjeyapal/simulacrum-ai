@@ -394,11 +394,11 @@ This enables:
 ## 📞 Support & Feedback
 
 ### Report Issues
-- **GitHub Issues:** https://github.com/[your-username]/simulacrum-ai/issues
+- **GitHub Issues:** https://github.com/arunjeyapal/simulacrum-ai/issues
 - **Tag:** `protocols`, `article-2`
 
 ### Discuss Ideas
-- **GitHub Discussions:** https://github.com/[your-username]/simulacrum-ai/discussions
+- **GitHub Discussions:** https://github.com/arunjeyapal/simulacrum-ai/discussions
 - **LinkedIn:** Comment on the article
 
 ### Contribute
@@ -437,7 +437,6 @@ This enables:
 ```bash
 git pull origin main
 pip install -e .
-python examples/02_distributed_protocols_demo.py
+cd src/
+python -m examples.02_distributed_protocols_demo
 ```
-
-**Welcome to v0.2! 🎉**
