@@ -90,6 +90,7 @@ class Citizen(BaseModel):
     
     class Config:
         arbitrary_types_allowed = True
+        extra = 'allow'
     
     def get_personality_summary(self) -> str:
         """Generate a human-readable personality description"""
