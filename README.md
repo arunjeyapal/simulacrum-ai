@@ -207,10 +207,10 @@ for neuroticism in [0.1, 0.5, 0.9]:
 - [x] Multi-agent coordination
 
 ### 📋 Phase 3: Agent Economies (Article 3)
-- [ ] Token-based transactions
-- [ ] Agent-to-agent negotiations
-- [ ] Marketplace dynamics
-- [ ] Resource allocation
+- [x] Token-based transactions
+- [x] Agent-to-agent negotiations
+- [x] Marketplace dynamics
+- [x] Resource allocation
 
 ### 🔬 Phase 4: Algorithmic Evolution (Article 4)
 - [ ] Long-running simulations
@@ -329,11 +329,11 @@ If you find this project useful, please consider starring it on GitHub!
 
 This project accompanies a 5-part LinkedIn newsletter series:
 
-1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** - (Released Feb 10)
-2. **[The Elegance of the Swarm](https://www.linkedin.com/pulse/elegance-swarm-distributed-agentic-protocols-arun-jayapal-phd-in-cs-c50gc)** - Distributed protocols ← You are here
-3. **The Agent-to-Agent Economy** - Autonomous marketplaces (Coming Feb 24)
-4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 03)
-5. **Governance as Architecture** - AI safety at scale (Coming Mar 10)
+1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** - (Released Feb 17)
+2. **[The Elegance of the Swarm](https://www.linkedin.com/pulse/elegance-swarm-distributed-agentic-protocols-arun-jayapal-phd-in-cs-c50gc)** - Distributed protocols - (Released Feb 24)
+3. **[The Agent-to-Agent Economy](https://www.linkedin.com/pulse/agent-to-agent-economy-when-ai-learns-transact-jayapal-phd-in-cs-eelvc)**- Autonomous marketplaces ← You are here
+4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 10)
+5. **Governance as Architecture** - AI safety at scale (Coming Mar 17)
 
 Subscribe to the newsletter: [[LinkedIn Newsletter Link]](https://www.linkedin.com/newsletters/the-simulation-layer-7425530387369472000)
 
