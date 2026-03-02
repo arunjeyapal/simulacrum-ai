@@ -192,6 +192,13 @@ class Citizen(BaseModel):
         
         return response
     
+    def remember(self, event: str, context: str = "") -> None:
+        """Store an event directly in memory without LLM processing."""
+        self.memory.append(MemoryEntry(
+            stimulus=event,
+            response=context or "noted"
+        ))
+
     def recall(self, keyword: str) -> List[MemoryEntry]:
         """Retrieve memories containing a specific keyword"""
         return [
