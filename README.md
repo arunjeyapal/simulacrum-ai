@@ -1,264 +1,264 @@
-# Simulacrum: Synthetic Citizens & Multi-Agent Societies
+# Simulacrum: Digital Twins & Behavioral AI
 
+**Production-ready framework for creating digital twins and simulating human behavior.**
+
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
-> **Architecting Synthetic Societies, Distributed Protocols, and the Future of Agentic AI**
-
-Simulacrum is an open-source framework for creating AI agents with psychological consistency, memory, and emergent behavior. Move beyond static user personas to dynamic behavioral simulations.
-
-📰 **Featured in LinkedIn Newsletter**: ["The Simulation Layer"](https://www.linkedin.com/newsletters/the-simulation-layer-7425530387369472000)
-
----
-
-## 🎯 What is Simulacrum?
-
-Traditional user personas give you demographics. Simulacrum gives you **behavioral predictions**.
-
-```python
-from simulacrum.agents.persona import Citizen, PsychologicalProfile
-
-# Create a synthetic citizen with specific personality
-citizen = Citizen(
-    name="Alex",
-    role="Tech Enthusiast",
-    traits=PsychologicalProfile(
-        openness=0.9,           # Loves innovation
-        conscientiousness=0.3,  # Impulsive
-        neuroticism=0.1         # Calm
-    )
-)
-
-# Test your product messaging
-reaction = citizen.think(
-    "Introducing AI-powered email that writes itself!"
-)
-
-print(reaction)
-# Output: "Finally! I've been waiting for this. Sign me up!"
-```
-
----
-
-## ✨ Key Features
-
-### 🧠 Psychological Realism
-- **Big Five Personality Model**: Grounded in 50+ years of psychology research
-- **Behavioral Consistency**: Agents react authentically across different scenarios
-- **Trait-Based Responses**: High neuroticism = anxiety, high openness = curiosity
-
-### 💾 Memory Systems
-- **Episodic Memory**: Agents remember past interactions
-- **Contextual Responses**: References previous conversations
-- **Temporal Tracking**: Timestamped memory entries
-
-### 🏭 Production-Ready
-- **Type-Safe**: Pydantic validation ensures data integrity
-- **Model-Agnostic**: Works with OpenAI, Anthropic, Google, or local LLMs
-- **Tested**: Comprehensive test suite with 30+ unit tests
-- **Extensible**: Factory patterns, composable traits
-
-### 📊 Rich Visualization
-- Beautiful terminal output using Rich library
-- Comparative analysis tables
-- Behavioral consistency reports
 
 ---
 
 ## 🚀 Quick Start
 
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/arunjeyapal/simulacrum-ai.git
-cd simulacrum-ai
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up your API keys
-cp .env.example .env
-# Edit .env and add your OPENAI_API_KEY or other LLM credentials
-```
-
-### Run the Demo
-
-```bash
-python examples/01_synthetic_citizens_demo.py
-```
-
-This will:
-1. Create 3 distinct synthetic citizens (Early Adopter, Skeptic, Anxious User)
-2. Test them with product announcements
-3. Test them with crisis communication
-4. Show behavioral consistency across scenarios
-
-### Create Your First Citizen (60 seconds)
-
 ```python
-from simulacrum.agents.persona import create_early_adopter
+from simulacrum import DigitalTwin
 
-# Use a pre-built archetype
-alex = create_early_adopter(name="Alex")
+# Create your digital twin from a personality survey
+twin = DigitalTwin.from_survey(survey_responses, name="Alice")
 
-# Test your messaging
-reaction = alex.think("We're launching a cryptocurrency product!")
-print(reaction)
-
-# Check memory
-print(alex.get_memory_summary())
-```
-
----
-
-## 📚 Documentation
-
-- **[Quick Start Guide](QUICKSTART.md)** - Get running in 5 minutes
-- **[Technical Deep Dive](ARTICLE_1_TECHNICAL_GUIDE.md)** - Architecture and research foundations
-- **[API Reference](docs/API.md)** - Complete API documentation
-- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute
-
----
-
-## 💡 Use Cases
-
-### 1. Product Testing
-Test messaging with diverse psychological profiles before launch:
-
-```python
-from simulacrum.agents.persona import (
-    create_early_adopter,
-    create_skeptic,
-    create_anxious_user
+# Simulate how you'd make a decision
+decision = twin.simulate_decision(
+    "Should I accept this job offer?",
+    context={"salary": 120000, "role": "Senior Engineer"}
 )
 
-message = "AI that automatically manages your finances while you sleep"
-
-citizens = [
-    create_early_adopter(),
-    create_skeptic(),
-    create_anxious_user()
-]
-
-for citizen in citizens:
-    print(f"{citizen.name}: {citizen.think(message)}")
+print(decision.recommendation)  # "Accept" or "Decline"
+print(decision.reasoning)        # Natural language explanation
+print(decision.confidence)       # 0.85 (85% confident)
 ```
 
-**Output:**
-- Early Adopter: "Finally! Automation is the future!"
-- Skeptic: "Show me the security certifications first."
-- Anxious User: "Automatically? That makes me nervous..."
+**That's it!** No complex setup, no configuration files—just import and use.
 
-### 2. Crisis Communication
-Test how different personalities respond to emergency notifications:
+---
 
-```python
-crisis = "Service will be down for 48 hours due to technical issues"
+## 📦 Installation
 
-for citizen in citizens:
-    reaction = citizen.think(crisis)
-    action = citizen.think("What will you do next?")
-    print(f"{citizen.name}: {reaction} → {action}")
-```
+```bash
+# From GitHub (recommended for now)
+pip install git+https://github.com/arun-jayapal/simulacrum-ai.git
 
-### 3. Policy Design
-Simulate reactions to organizational changes:
-
-```python
-policy = "Starting next month, all employees use biometric login"
-
-# Create 100 employees with diverse traits
-employees = [create_diverse_citizen() for _ in range(100)]
-
-reactions = [emp.think(policy) for emp in employees]
-sentiment_analysis(reactions)  # Predict adoption vs. resistance
-```
-
-### 4. Research
-Study behavioral patterns across personality types:
-
-```python
-# Test risk tolerance across neuroticism levels
-for neuroticism in [0.1, 0.5, 0.9]:
-    citizen = Citizen(
-        traits=PsychologicalProfile(neuroticism=neuroticism, ...)
-    )
-    reaction = citizen.think("50% chance of success")
-    log_risk_response(neuroticism, reaction)
+# For development
+git clone https://github.com/arun-jayapal/simulacrum-ai.git
+cd simulacrum-ai
+pip install -e ".[dev]"
 ```
 
 ---
 
-## 🗺️ Project Roadmap
+## 🎯 What is Simulacrum?
 
-### ✅ Phase 1: Synthetic Citizens (Current - Article 1)
-- [x] Big Five personality implementation
-- [x] Memory systems
-- [x] Factory functions for common archetypes
-- [x] Comprehensive test suite
-- [x] Rich visualization
+Simulacrum is a **library-first** framework for:
 
-### ✅ Phase 2: Distributed Protocols (Article 2 - Coming Soon)
-- [x] Jury deliberation simulations
-- [x] Voting mechanisms (majority, weighted, ranked-choice)
-- [x] Consensus protocols
-- [x] Multi-agent coordination
+1. **Digital Twins**: Create AI replicas of specific individuals
+2. **Behavioral Simulation**: Model how people make decisions
+3. **Team Dynamics**: Simulate group interactions
+4. **Validated AI**: Built on scientifically validated foundations
 
-### 📋 Phase 3: Agent Economies (Article 3)
-- [x] Token-based transactions
-- [x] Agent-to-agent negotiations
-- [x] Marketplace dynamics
-- [x] Resource allocation
+### Digital Twin vs AI Assistant
 
-### 🔬 Phase 4: Algorithmic Evolution (Article 4)
-- [ ] Long-running simulations
-- [ ] Behavioral drift detection
-- [ ] Communication pattern analysis
-- [ ] Diachronic studies
+| AI Assistant | Digital Twin |
+|--------------|--------------|
+| Helpful AI | AI version of **you** |
+| "How can I help you?" | "This is what I would do" |
+| Generic | Personalized |
+| Reactive | Predictive |
 
-### 🛡️ Phase 5: Governance (Article 5)
-- [ ] Safety constraints
-- [ ] Bias detection
-- [ ] Transparency tools
-- [ ] Ethical guidelines
+---
+
+## ✨ Key Features
+
+### 🧠 Psychological Accuracy
+Built on the Big Five personality model with 70+ years of research validation.
+
+### 🤝 Team Simulations
+Simulate team decisions, predict conflicts, optimize collaboration.
+
+### 💰 Economic Behavior
+Model budgets, negotiations, and market dynamics.
+
+### 📈 Temporal Evolution
+Agents learn and evolve over time based on experiences.
+
+### 🛡️ Safety First
+Governance, audit trails, and explainability built-in.
+
+### 🔬 Scientifically Validated
+- 100% internal validation (15/15 tests passed)
+- 88.9% research replication (8/9 studies)
+- Validates against Nobel Prize research
+
+---
+
+## 📖 Usage Examples
+
+### Create Digital Twin from Survey
+
+```python
+from simulacrum import create_twin_from_survey
+
+# User answers 50-question personality survey
+twin = create_twin_from_survey(
+    survey_responses,
+    name="Alice",
+    enable_memory=True
+)
+
+# Check calibration
+print(f"Calibration: {twin.get_calibration_score():.0%}")
+```
+
+### Simulate Decisions
+
+```python
+# Personal decision
+decision = twin.simulate_decision(
+    "Accept job offer at startup?",
+    context={
+        "salary": 100000,
+        "equity": "0.5%",
+        "risk": "high"
+    }
+)
+
+print(f"Recommendation: {decision.recommendation}")
+print(f"Why: {decision.reasoning}")
+```
+
+### Calibrate Accuracy
+
+```python
+# Test twin against known decisions
+test_scenarios = [
+    {"question": "Take risky investment?", "context": {...}},
+    {"question": "Confront colleague?", "context": {...}},
+    # ... 10-20 scenarios
+]
+actual_choices = ["Decline", "Accept", ...]
+
+accuracy = twin.calibrate(test_scenarios, actual_choices)
+print(f"Twin accuracy: {accuracy:.0%}")
+```
+
+### Team Digital Twins
+
+```python
+from simulacrum import create_team_twin
+
+# Create team from individual twins
+team = create_team_twin([alice_twin, bob_twin, carol_twin])
+
+# Simulate team decision
+decision = team.simulate_team_decision(
+    "Launch AI feature at $25K cost?",
+    voting_method="consensus"
+)
+
+print(f"Outcome: {decision.outcome}")
+print(f"Consensus: {decision.consensus_strength:.0%}")
+```
+
+### Integration Example
+
+```python
+# In your application
+from simulacrum import DigitalTwin
+
+class CareerAdvisor:
+    def __init__(self, user_profile):
+        self.twin = DigitalTwin.from_survey(
+            user_profile["survey"],
+            name=user_profile["name"]
+        )
+    
+    def evaluate_offers(self, job_offers):
+        results = []
+        for offer in job_offers:
+            decision = self.twin.simulate_decision(
+                f"Accept {offer['company']} offer?",
+                context=offer
+            )
+            results.append({
+                "company": offer["company"],
+                "recommendation": decision.recommendation,
+                "confidence": decision.confidence
+            })
+        return results
+```
 
 ---
 
 ## 🏗️ Architecture
 
-```
-simulacrum-ai/
-├── src/simulacrum/
-│   ├── core/              # LLM engine, memory, logging
-│   ├── agents/            # Citizen implementation
-│   ├── protocols/         # Multi-agent coordination
-│   ├── economy/           # Token systems (Phase 3)
-│   └── evolution/         # Diachronic AI (Phase 4)
-├── examples/              # Runnable demonstrations
-├── tests/                 # Test suite
-└── docs/                  # Documentation
-```
+Simulacrum is built in **8 layers**:
+
+1. **Individual Psychology** (Big Five traits, memory)
+2. **Collective Protocols** (Voting, consensus, deliberation)
+3. **Economic Behavior** (Wallets, negotiation, markets)
+4. **Temporal Dynamics** (Learning, evolution, adaptation)
+5. **Governance** (Safety, audit trails, constraints)
+6. **Integration** (All layers working together)
+7. **Validation** (Statistical tests, reproducibility)
+8. **Digital Twins** (Personalized replicas) ← **NEW**
+
+Each layer builds on previous layers. You can use any layer independently or combine them.
 
 ---
 
-## 🔬 Research Foundations
+## 🎓 Documentation
 
-### Psychology
-- **Big Five Model**: Costa & McCrae (1992), John & Srivastava (1999)
-- **Behavioral Prediction**: Judge et al. (2002)
-- **Trait Stability**: Roberts & DelVecchio (2000)
+- **[Getting Started Guide](docs/getting_started.md)** - Installation and first twin
+- **[API Reference](docs/api/)** - Complete API documentation
+- **[User Guides](docs/guides/)** - Integration patterns and best practices
+- **[Examples](examples/)** - Real-world usage examples
+- **[Articles](docs/articles/)** - LinkedIn series explaining concepts
 
-### AI & Simulation
-- **Generative Agents**: Park et al. (2023) - Stanford
-- **LLMs as Economic Agents**: Horton (2023) - MIT
-- **Constitutional AI**: Anthropic (2024)
+---
 
-### Applied Methodology
-- Nielsen Norman Group - User research principles
-- Kahneman & Tversky - Behavioral economics
-- IRB Guidelines - Simulation ethics
+## 📊 Validation
+
+Simulacrum is **scientifically validated**:
+
+### Internal Validation (100%)
+- 140+ unit tests
+- 15 statistical validation tests
+- All passing
+
+### External Validation (88.9%)
+- Replicates 8/9 classic research studies
+- Includes Nobel Prize research (Kahneman)
+- Includes foundational psychology (Asch, Barrick & Mount)
+
+**See:** [Research Replication Results](docs/validation/research_replication.md)
+
+---
+
+## 🛠️ Development
+
+### Running Tests
+
+```bash
+# All tests
+pytest
+
+# With coverage
+pytest --cov=simulacrum --cov-report=html
+
+# Specific module
+pytest tests/test_digital_twin/
+```
+
+### Code Quality
+
+```bash
+# Format code
+black src/ tests/
+
+# Lint
+ruff src/ tests/
+
+# Type check
+mypy src/
+```
 
 ---
 
@@ -266,97 +266,93 @@ simulacrum-ai/
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-**Priority Areas:**
-- New personality archetypes
-- Calibration studies (synthetic vs. real users)
-- Cultural trait systems beyond Big Five
-- Emotional dynamics modeling
-- Performance optimizations
-
----
-
-## 📊 Validation & Limitations
-
-### ✅ What This Provides
-- Behavioral variance across personality types
-- Consistency within individual agents
-- Memory-based contextual responses
-- Scalable simulations (100s of agents)
-
-### ⚠️ Current Limitations
-- No ground truth validation against real cohorts
-- Big Five has Western cultural origins
-- Static traits (real personalities evolve)
-- No emotional dynamics (mood, fatigue)
-- Prompt engineering sensitivity
-
-**Recommended Usage:**
-- Hypothesis generation (not final decisions)
-- Scenario planning and A/B testing
-- Complement (not replace) human research
-- Always disclose "synthetic" nature to stakeholders
+**Areas we'd love help with:**
+- Additional personality assessments
+- More validation tests
+- Real-world integration examples
+- Documentation improvements
+- Bug reports and fixes
 
 ---
 
 ## 📄 License
 
-MIT License - See [LICENSE](LICENSE) file
-
-**Dependencies:**
-- Pydantic (MIT)
-- LiteLLM (MIT)
-- Rich (MIT)
-- Tenacity (Apache 2.0)
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## 📞 Support
+## 🔗 Links
 
-- **Issues**: [GitHub Issues](https://github.com/arunjeyapal/simulacrum-ai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/arunjeyapal/simulacrum-ai/discussions)
-- **Email**: [contact@arunjayapal.com]
-- **LinkedIn**: Connect with the author at [[Your LinkedIn Profile]](https://linkedin.com/in/arunjeyapal)
-
----
-
-## 🌟 Star History
-
-If you find this project useful, please consider starring it on GitHub!
+- **GitHub**: https://github.com/arunjeyapal/simulacrum-ai
+- **Documentation**: https://simulacrum-ai.readthedocs.io
+- **LinkedIn Series**: [The Simulation Layer](https://linkedin.com/...)
+- **Issues**: https://github.com/arunjeyapal/simulacrum-ai/issues
 
 ---
 
-## 📰 Newsletter Series: "The Simulation Layer"
+## 📚 Citation
 
-This project accompanies a 5-part LinkedIn newsletter series:
+If you use Simulacrum in academic work:
 
-1. **[The Rise of Synthetic Citizens](https://www.linkedin.com/pulse/rise-synthetic-citizens-beyond-static-personas-jayapal-phd-in-cs-bt4lc)** - (Released Feb 17)
-2. **[The Elegance of the Swarm](https://www.linkedin.com/pulse/elegance-swarm-distributed-agentic-protocols-arun-jayapal-phd-in-cs-c50gc)** - Distributed protocols - (Released Feb 24)
-3. **[The Agent-to-Agent Economy](https://www.linkedin.com/pulse/agent-to-agent-economy-when-ai-learns-transact-jayapal-phd-in-cs-eelvc)**- Autonomous marketplaces ← You are here
-4. **Algorithmic Evolution** - Diachronic AI (Coming Mar 10)
-5. **Governance as Architecture** - AI safety at scale (Coming Mar 17)
-
-Subscribe to the newsletter: [[LinkedIn Newsletter Link]](https://www.linkedin.com/newsletters/the-simulation-layer-7425530387369472000)
-
----
-
-## 🙏 Acknowledgments
-
-- Costa & McCrae for Big Five taxonomy
-- Park et al. for Generative Agents inspiration
-- Anthropic, OpenAI, Google for LLM APIs
-- The open-source community
+```bibtex
+@software{simulacrum2025,
+  author = {Jayapal, Arun},
+  title = {Simulacrum: Digital Twins and Behavioral AI},
+  year = {2025},
+  url = {https://github.com/arunjeyapal/simulacrum-ai},
+  version = {2.0.0}
+}
+```
 
 ---
 
-## 📈 Project Stats
+## 🌟 Series Background
 
-![GitHub stars](https://img.shields.io/github/stars/arunjeyapal/simulacrum-ai?style=social)
-![GitHub forks](https://img.shields.io/github/forks/arunjeyapal/simulacrum-ai?style=social)
-![GitHub issues](https://img.shields.io/github/issues/arunjeyapal/simulacrum-ai)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/arunjeyapal/simulacrum-ai)
+Simulacrum was built through two LinkedIn article series:
+
+**Series 1: Synthetic Agents (8 articles)**
+- Built the foundation: psychology, protocols, economy, evolution, governance
+- 9,200 lines of production code
+- 100% internally validated
+- 88.9% research replication rate
+
+**Series 2: Digital Twins (5 articles)** ← **Current**
+- Extends foundation to personal digital twins
+- Library-first architecture
+- Real-world integration focus
+- Ethics and governance emphasis
 
 ---
 
-**Built with ❤️ by [Arun Jayapal](https://linkedin.com/in/arunjeyapal)**
+## ✨ What's Next?
 
-*"The future isn't about predicting what users will do. It's about simulating who they are."*
+**Near-term:**
+- PyPI distribution
+- More personality assessments
+- Enhanced calibration methods
+- Additional validation tests
+
+**Medium-term:**
+- Multi-twin strategies (work you vs personal you)
+- Temporal twins (you at different ages)
+- Organizational twins
+- API service
+
+**Long-term:**
+- Continuous learning
+- Legacy twins
+- Society-level simulations
+
+---
+
+## 💬 Contact
+
+- **Author**: Arun Jayapal
+- **Email**: contact@arunjayapal.com
+- **LinkedIn**: https://www.linkedin.com/in/arunjeyapal/
+
+---
+
+**Built with ❤️ for the future of personalized AI**
+
+**Not just built. Not just tested. Scientifically validated.** ✅

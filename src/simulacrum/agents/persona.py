@@ -3,7 +3,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 from datetime import datetime
-from simulacrum.core.llm import LLMEngine
 
 class PsychologicalProfile(BaseModel):
     """
@@ -50,6 +49,13 @@ class PsychologicalProfile(BaseModel):
         
         level = "high" if value > 0.65 else "low" if value < 0.35 else "medium"
         return interpretations.get(trait_name.lower(), {}).get(level, "undefined")
+
+    def to_dict(self) -> Dict[str, Any]:
+        return self.model_dump()
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "PsychologicalProfile":
+        return cls(**data)
 
 class MemoryEntry(BaseModel):
     """Single memory record with metadata"""
@@ -157,6 +163,7 @@ class Citizen(BaseModel):
         Returns:
             The citizen's authentic reaction
         """
+        from simulacrum.core.llm import LLMEngine
         engine = LLMEngine(model_name=self.model)
         
         system_prompt = self._build_system_prompt()
@@ -266,5 +273,22 @@ def create_anxious_user(name: str = "Charlie", model: str = "openai/gpt-3.5-turb
         core_values=["safety", "family", "peace of mind"],
         backstory="Recently retired after 35 years. Very protective of retirement savings. Prefers proven, stable approaches.",
         demographics=DemographicProfile(age=67, occupation="Retired Teacher"),
+        model=model
+    )
+
+def create_analyst(name: str = "Diana", model: str = "openai/gpt-3.5-turbo") -> Citizen:
+    """Factory function for Data Analyst archetype"""
+    return Citizen(
+        name=name,
+        role="Data Analyst & Rational Decision Maker",
+        traits=PsychologicalProfile(
+            openness=0.6,
+            conscientiousness=0.85,
+            extraversion=0.35,
+            agreeableness=0.5,
+            neuroticism=0.25
+        ),
+        core_values=["accuracy", "evidence", "logic"],
+        backstory="Professional analyst who makes decisions based on data. Skeptical of gut feelings without supporting evidence.",
         model=model
     )
